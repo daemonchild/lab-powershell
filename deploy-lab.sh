@@ -29,14 +29,14 @@ docker volume create $DATAVOL
 
 # Clean up any conflicting containers
 echo  - Clearing up...
-for i in $(eval echo $PWSHNAME{1..$MAXSVR}) ; do docker stop pwsh-lab$i || true ; docker rm pwsh-lab$i || true ; done
+for i in $(eval echo $PWSHNAME{1..$MAXSVR}) ; do docker stop $i || true ; docker rm $i || true ; done
 
 echo  - Starting Powershell Servers
 # Create Powershell Containers
 for i in $(eval echo $PWSHNAME{1..$MAXSVR}); do
 
-    echo  -- $PWSHNAME$i
-    docker run -d --name $PWSHNAME$i --network $NETWORK --mount source=$DATAVOL,destination=$DATAFOLDER,readonly pwsh-lab:$PWSHVER
+    echo  -- $i
+    docker run -d --name $i --network $NETWORK --mount source=$DATAVOL,destination=$DATAFOLDER,readonly pwsh-lab:$PWSHVER
 
 done
 
