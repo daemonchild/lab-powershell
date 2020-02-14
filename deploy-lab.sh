@@ -17,7 +17,7 @@ echo "*** Building Images ***"
 
 CURRENTDIR=$PWD
 
-BUILDLIST=pwsh-lab pwsh-lab
+BUILDLIST= "pwsh-lab pwsh-lab"
 
 for c in $BUILDLIST ; do
 
