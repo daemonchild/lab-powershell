@@ -28,7 +28,7 @@ docker network create $NETWORK
 docker volume create $DATAVOL
 
 # Clean up any conflicting containers
-echo  - Clearing up...
+echo  - Clearing up... (Errors expected on first run)
 docker stop $WEBSSHNAME || true ; docker rm $WEBSSHNAME || true
 for i in $(eval echo $PWSHNAME{1..$MAXSVR}) ; do docker stop $i || true ; docker rm $i || true ; done
 
@@ -43,6 +43,6 @@ done
 
 # Create WebSSH Container
 echo  - Starting WebSSH $WEBSSHNAME
-docker run -d --name $WEBSSHNAME --network $NETWORK -p $WEBSSHEXPOSED:8888 pwsh-lab:$PWSHVER
+docker run -d --name $WEBSSHNAME --network $NETWORK -p $WEBSSHEXPOSED:8888 webssh-lab:$PWSHVER
 
 echo "*** Deploy Complete ***"
