@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
 # Define variables - edit these if required
+LABVER=1.0
 NETWORK=pwsh-labs
 DATAVOL=pwsh-lab-exercises
 DATAFOLDER=/pwsh-labs/exercises
 PWSHNAME=pwsh-lab
-PWSHVER=1.0
 WEBSSHNAME=webssh-lab
-WEBSSHVER=1.0
 WEBSSHEXPOSED=8000
 
 MAXSVR=5
@@ -18,12 +17,15 @@ echo "*** Building Images ***"
 
 CURRENTDIR = $PWD
 
-cd pwsh-lab
-docker build -t pwsh-lab:$PWSHVER .
-cd $CURRENTDIR
-cd pwsh-lab
-docker build -t webssh-lab:$WEBSSHVER webssh-lab/
-cd $CURRENTDIR
+BUILDLIST = pwsh-lab pwsh-lab
+
+for c in $BUILDLIST ; do
+
+    cd $c
+    docker build -t $c:$LABVER .
+    cd $CURRENTDIR
+
+done
 
 
 echo "*** Starting PowerShell Lab Environment ***"
