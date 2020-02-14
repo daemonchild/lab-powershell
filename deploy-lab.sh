@@ -45,12 +45,12 @@ echo  - Starting Powershell Servers
 for i in $(eval echo $PWSHNAME{1..$MAXSVR}); do
 
     echo  -- $i
-    docker run -d --name $i --network $NETWORK --mount source=$DATAVOL,destination=$DATAFOLDER,readonly pwsh-lab:$PWSHVER
+    docker run -d --name $i --network $NETWORK --mount source=$DATAVOL,destination=$DATAFOLDER,readonly pwsh-lab:$LABVER
 
 done
 
 # Create WebSSH Container
 echo  - Starting WebSSH $WEBSSHNAME
-docker run -d --name $WEBSSHNAME --network $NETWORK -p $WEBSSHEXPOSED:8888 webssh-lab:$PWSHVER
+docker run -d --name $WEBSSHNAME --network $NETWORK -p $WEBSSHEXPOSED:8888 webssh-lab:$LABVER
 
 echo "*** Deploy Complete ***"
