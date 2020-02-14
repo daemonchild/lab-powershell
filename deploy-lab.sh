@@ -43,3 +43,5 @@ done
 # Create WebSSH Container
 echo  - Starting WebSSH ($WEBSSHNAME)
 docker run -d --name $WEBSSHNAME$i --network $NETWORK -p $WEBSSHEXPOSED:8888 pwsh-lab:$PWSHVER
+
+echo "*** Deploy Complete ***"
