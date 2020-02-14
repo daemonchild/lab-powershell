@@ -15,9 +15,9 @@ MAXSVR=5
 
 echo "*** Building Images ***"
 
-CURRENTDIR = $PWD
+CURRENTDIR=$PWD
 
-BUILDLIST = pwsh-lab pwsh-lab
+BUILDLIST=pwsh-lab pwsh-lab
 
 for c in $BUILDLIST ; do
 
