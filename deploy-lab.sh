@@ -16,8 +16,14 @@ MAXSVR=5
 
 echo "*** Building Images ***"
 
-docker build -t pwsh-lab:$PWSHVER pwsh-lab/
+CURRENTDIR = $PWD
+
+cd pwsh-lab
+docker build -t pwsh-lab:$PWSHVER .
+cd $CURRENTDIR
+cd pwsh-lab
 docker build -t webssh-lab:$WEBSSHVER webssh-lab/
+cd $CURRENTDIR
 
 
 echo "*** Starting PowerShell Lab Environment ***"
