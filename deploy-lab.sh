@@ -17,9 +17,7 @@ echo "*** Building Images ***"
 
 CURRENTDIR=$PWD
 
-BUILDLIST= "pwsh-lab pwsh-lab"
-
-for c in $BUILDLIST ; do
+for c in pwsh-lab pwsh-lab ; do
 
     cd $c
     docker build -t $c:$LABVER .
