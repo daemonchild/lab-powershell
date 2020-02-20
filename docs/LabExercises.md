@@ -27,13 +27,13 @@ You’re on a Linux system running PowerShell Core. That means that certain Wind
 
 A list of CmdLets can be found with `Get-Command`.
 
-[picture]
+![Get-Command](https://github.com/daemonchild/lab-powershell/raw/master/docs/images/labnotes-getcommand.png)
 
 You can use the following to get a complete list of CmdLets and their aliases.
 
 `PS /> Get-Help -Category cmdlet`
 
-[picture]
+![Get-Help CmdLet](https://github.com/daemonchild/lab-powershell/blob/master/docs/images/labnotes-gethelpcmdlet.png)
 
 *(This may take some time, Ctrl-C to abort.)*
 
@@ -41,7 +41,7 @@ We will look at sorting and selecting output as we go.
 
 > TIP: PowerShell provides command completion. Use the Tab key to display a list of valid options for each stage. For example:
 
-[picture]
+![picture](https://github.com/daemonchild/lab-powershell/blob/master/docs/images/labnotes-tabcompletion.png)
 
 Use this feature to explore some other commands and their options. Run the command once you’ve built a suitable command line using Tab completion. There are questions to answer below.
 
